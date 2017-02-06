@@ -1,0 +1,329 @@
+
+=============
+ Antecedents 
+=============
+Antecedent: BMI 	 26
+  - low                             : 0.0
+  - moderate                        : 0.42857142857142855
+  - high                            : 0.5714285714285714
+Antecedent: BF 	 26
+  - low                             : 0.0
+  - normal                          : 0.42857142857142855
+  - high                            : 0.5714285714285714
+Antecedent: WC 	 70
+  - small                           : 0.0
+  - medium                          : 0.6666666666666666
+  - large                           : 0.3333333333333333
+
+=======
+ Rules 
+=======
+RULE #0:
+  IF (BMI[high] AND BF[high]) AND WC[large] THEN OL[obese]
+
+  Aggregation (IF-clause):
+  - BMI[high]                                              : 0.5714285714285714
+  - BF[high]                                               : 0.5714285714285714
+  - WC[large]                                              : 0.3333333333333333
+(BMI[high] AND BF[high]) AND WC[large] 	 0.333333333333
+  Activation (THEN-clause):
+OL[obese] 	 0.333333333333
+
+RULE #1:
+  IF (BMI[low] AND BF[normal]) AND WC[small] THEN OL[healthy]
+
+  Aggregation (IF-clause):
+  - BMI[low]                                               : 0.0
+  - BF[normal]                                             : 0.42857142857142855
+  - WC[small]                                              : 0.0
+(BMI[low] AND BF[normal]) AND WC[small] 	 0.0
+  Activation (THEN-clause):
+OL[healthy] 	 0.0
+
+RULE #2:
+  IF (BMI[moderate] AND BF[high]) AND WC[large] THEN OL[obese]
+
+  Aggregation (IF-clause):
+  - BMI[moderate]                                          : 0.42857142857142855
+  - BF[high]                                               : 0.5714285714285714
+  - WC[large]                                              : 0.3333333333333333
+(BMI[moderate] AND BF[high]) AND WC[large] 	 0.333333333333
+  Activation (THEN-clause):
+OL[obese] 	 0.333333333333
+
+RULE #3:
+  IF (BMI[moderate] AND BF[normal]) AND WC[medium] THEN OL[overweight]
+
+  Aggregation (IF-clause):
+  - BMI[moderate]                                          : 0.42857142857142855
+  - BF[normal]                                             : 0.42857142857142855
+  - WC[medium]                                             : 0.6666666666666666
+(BMI[moderate] AND BF[normal]) AND WC[medium] 	 0.428571428571
+  Activation (THEN-clause):
+OL[overweight] 	 0.428571428571
+
+RULE #4:
+  IF (BMI[moderate] AND BF[low]) AND WC[large] THEN OL[obese]
+
+  Aggregation (IF-clause):
+  - BMI[moderate]                                          : 0.42857142857142855
+  - BF[low]                                                : 0.0
+  - WC[large]                                              : 0.3333333333333333
+(BMI[moderate] AND BF[low]) AND WC[large] 	 0.0
+  Activation (THEN-clause):
+OL[obese] 	 0.0
+
+RULE #5:
+  IF (BMI[moderate] AND BF[normal]) AND WC[small] THEN OL[overweight]
+
+  Aggregation (IF-clause):
+  - BMI[moderate]                                          : 0.42857142857142855
+  - BF[normal]                                             : 0.42857142857142855
+  - WC[small]                                              : 0.0
+(BMI[moderate] AND BF[normal]) AND WC[small] 	 0.0
+  Activation (THEN-clause):
+OL[overweight] 	 0.0
+
+RULE #6:
+  IF (BMI[high] AND BF[normal]) AND WC[medium] THEN OL[obese]
+
+  Aggregation (IF-clause):
+  - BMI[high]                                              : 0.5714285714285714
+  - BF[normal]                                             : 0.42857142857142855
+  - WC[medium]                                             : 0.6666666666666666
+(BMI[high] AND BF[normal]) AND WC[medium] 	 0.428571428571
+  Activation (THEN-clause):
+OL[obese] 	 0.428571428571
+
+RULE #7:
+  IF (BMI[low] AND BF[low]) AND WC[medium] THEN OL[healthy]
+
+  Aggregation (IF-clause):
+  - BMI[low]                                               : 0.0
+  - BF[low]                                                : 0.0
+  - WC[medium]                                             : 0.6666666666666666
+(BMI[low] AND BF[low]) AND WC[medium] 	 0.0
+  Activation (THEN-clause):
+OL[healthy] 	 0.0
+
+RULE #8:
+  IF (BMI[low] AND BF[normal]) AND WC[large] THEN OL[obese]
+
+  Aggregation (IF-clause):
+  - BMI[low]                                               : 0.0
+  - BF[normal]                                             : 0.42857142857142855
+  - WC[large]                                              : 0.3333333333333333
+(BMI[low] AND BF[normal]) AND WC[large] 	 0.0
+  Activation (THEN-clause):
+OL[obese] 	 0.0
+
+RULE #9:
+  IF (BMI[moderate] AND BF[high]) AND WC[medium] THEN OL[obese]
+
+  Aggregation (IF-clause):
+  - BMI[moderate]                                          : 0.42857142857142855
+  - BF[high]                                               : 0.5714285714285714
+  - WC[medium]                                             : 0.6666666666666666
+(BMI[moderate] AND BF[high]) AND WC[medium] 	 0.428571428571
+  Activation (THEN-clause):
+OL[obese] 	 0.428571428571
+
+RULE #10:
+  IF (BMI[high] AND BF[high]) AND WC[medium] THEN OL[obese]
+
+  Aggregation (IF-clause):
+  - BMI[high]                                              : 0.5714285714285714
+  - BF[high]                                               : 0.5714285714285714
+  - WC[medium]                                             : 0.6666666666666666
+(BMI[high] AND BF[high]) AND WC[medium] 	 0.571428571429
+  Activation (THEN-clause):
+OL[obese] 	 0.571428571429
+
+RULE #11:
+  IF (BMI[high] AND BF[low]) AND WC[large] THEN OL[overweight]
+
+  Aggregation (IF-clause):
+  - BMI[high]                                              : 0.5714285714285714
+  - BF[low]                                                : 0.0
+  - WC[large]                                              : 0.3333333333333333
+(BMI[high] AND BF[low]) AND WC[large] 	 0.0
+  Activation (THEN-clause):
+OL[overweight] 	 0.0
+
+RULE #12:
+  IF (BMI[low] AND BF[high]) AND WC[small] THEN OL[healthy]
+
+  Aggregation (IF-clause):
+  - BMI[low]                                               : 0.0
+  - BF[high]                                               : 0.5714285714285714
+  - WC[small]                                              : 0.0
+(BMI[low] AND BF[high]) AND WC[small] 	 0.0
+  Activation (THEN-clause):
+OL[healthy] 	 0.0
+
+RULE #13:
+  IF (BMI[low] AND BF[low]) AND WC[small] THEN OL[healthy]
+
+  Aggregation (IF-clause):
+  - BMI[low]                                               : 0.0
+  - BF[low]                                                : 0.0
+  - WC[small]                                              : 0.0
+(BMI[low] AND BF[low]) AND WC[small] 	 0.0
+  Activation (THEN-clause):
+OL[healthy] 	 0.0
+
+RULE #14:
+  IF (BMI[high] AND BF[normal]) AND WC[large] THEN OL[obese]
+
+  Aggregation (IF-clause):
+  - BMI[high]                                              : 0.5714285714285714
+  - BF[normal]                                             : 0.42857142857142855
+  - WC[large]                                              : 0.3333333333333333
+(BMI[high] AND BF[normal]) AND WC[large] 	 0.333333333333
+  Activation (THEN-clause):
+OL[obese] 	 0.333333333333
+
+RULE #15:
+  IF (BMI[high] AND BF[normal]) AND WC[small] THEN OL[overweight]
+
+  Aggregation (IF-clause):
+  - BMI[high]                                              : 0.5714285714285714
+  - BF[normal]                                             : 0.42857142857142855
+  - WC[small]                                              : 0.0
+(BMI[high] AND BF[normal]) AND WC[small] 	 0.0
+  Activation (THEN-clause):
+OL[overweight] 	 0.0
+
+RULE #16:
+  IF (BMI[high] AND BF[high]) AND WC[small] THEN OL[overweight]
+
+  Aggregation (IF-clause):
+  - BMI[high]                                              : 0.5714285714285714
+  - BF[high]                                               : 0.5714285714285714
+  - WC[small]                                              : 0.0
+(BMI[high] AND BF[high]) AND WC[small] 	 0.0
+  Activation (THEN-clause):
+OL[overweight] 	 0.0
+
+RULE #17:
+  IF (BMI[high] AND BF[low]) AND WC[medium] THEN OL[healthy]
+
+  Aggregation (IF-clause):
+  - BMI[high]                                              : 0.5714285714285714
+  - BF[low]                                                : 0.0
+  - WC[medium]                                             : 0.6666666666666666
+(BMI[high] AND BF[low]) AND WC[medium] 	 0.0
+  Activation (THEN-clause):
+OL[healthy] 	 0.0
+
+RULE #18:
+  IF (BMI[low] AND BF[high]) AND WC[large] THEN OL[obese]
+
+  Aggregation (IF-clause):
+  - BMI[low]                                               : 0.0
+  - BF[high]                                               : 0.5714285714285714
+  - WC[large]                                              : 0.3333333333333333
+(BMI[low] AND BF[high]) AND WC[large] 	 0.0
+  Activation (THEN-clause):
+OL[obese] 	 0.0
+
+RULE #19:
+  IF (BMI[low] AND BF[normal]) AND WC[medium] THEN OL[overweight]
+
+  Aggregation (IF-clause):
+  - BMI[low]                                               : 0.0
+  - BF[normal]                                             : 0.42857142857142855
+  - WC[medium]                                             : 0.6666666666666666
+(BMI[low] AND BF[normal]) AND WC[medium] 	 0.0
+  Activation (THEN-clause):
+OL[overweight] 	 0.0
+
+RULE #20:
+  IF (BMI[moderate] AND BF[low]) AND WC[medium] THEN OL[healthy]
+
+  Aggregation (IF-clause):
+  - BMI[moderate]                                          : 0.42857142857142855
+  - BF[low]                                                : 0.0
+  - WC[medium]                                             : 0.6666666666666666
+(BMI[moderate] AND BF[low]) AND WC[medium] 	 0.0
+  Activation (THEN-clause):
+OL[healthy] 	 0.0
+
+RULE #21:
+  IF (BMI[moderate] AND BF[low]) AND WC[small] THEN OL[healthy]
+
+  Aggregation (IF-clause):
+  - BMI[moderate]                                          : 0.42857142857142855
+  - BF[low]                                                : 0.0
+  - WC[small]                                              : 0.0
+(BMI[moderate] AND BF[low]) AND WC[small] 	 0.0
+  Activation (THEN-clause):
+OL[healthy] 	 0.0
+
+RULE #22:
+  IF (BMI[moderate] AND BF[normal]) AND WC[large] THEN OL[obese]
+
+  Aggregation (IF-clause):
+  - BMI[moderate]                                          : 0.42857142857142855
+  - BF[normal]                                             : 0.42857142857142855
+  - WC[large]                                              : 0.3333333333333333
+(BMI[moderate] AND BF[normal]) AND WC[large] 	 0.333333333333
+  Activation (THEN-clause):
+OL[obese] 	 0.333333333333
+
+RULE #23:
+  IF (BMI[low] AND BF[high]) AND WC[medium] THEN OL[overweight]
+
+  Aggregation (IF-clause):
+  - BMI[low]                                               : 0.0
+  - BF[high]                                               : 0.5714285714285714
+  - WC[medium]                                             : 0.6666666666666666
+(BMI[low] AND BF[high]) AND WC[medium] 	 0.0
+  Activation (THEN-clause):
+OL[overweight] 	 0.0
+
+RULE #24:
+  IF (BMI[moderate] AND BF[high]) AND WC[small] THEN OL[overweight]
+
+  Aggregation (IF-clause):
+  - BMI[moderate]                                          : 0.42857142857142855
+  - BF[high]                                               : 0.5714285714285714
+  - WC[small]                                              : 0.0
+(BMI[moderate] AND BF[high]) AND WC[small] 	 0.0
+  Activation (THEN-clause):
+OL[overweight] 	 0.0
+
+RULE #25:
+  IF (BMI[low] AND BF[low]) AND WC[large] THEN OL[healthy]
+
+  Aggregation (IF-clause):
+  - BMI[low]                                               : 0.0
+  - BF[low]                                                : 0.0
+  - WC[large]                                              : 0.3333333333333333
+(BMI[low] AND BF[low]) AND WC[large] 	 0.0
+  Activation (THEN-clause):
+OL[healthy] 	 0.0
+
+RULE #26:
+  IF (BMI[high] AND BF[low]) AND WC[small] THEN OL[healthy]
+
+  Aggregation (IF-clause):
+  - BMI[high]                                              : 0.5714285714285714
+  - BF[low]                                                : 0.0
+  - WC[small]                                              : 0.0
+(BMI[high] AND BF[low]) AND WC[small] 	 0.0
+  Activation (THEN-clause):
+OL[healthy] 	 0.0
+
+
+==============================
+ Intermediaries and Conquests 
+==============================
+Consequent: OL 	 66.4725616119
+  healthy:
+          Accumulate using _accu_max : 0.0
+  overweight:
+          Accumulate using _accu_max : 0.42857142857142855
+  obese:
+          Accumulate using _accu_max : 0.5714285714285714
+
